@@ -8,7 +8,7 @@ teamNum = 0;
 matchNum = "";
 
 var img = new Image();
-img.src = '/field.png';
+img.src = 'field.png';
 var canvas = document.getElementById('fieldCanvas');
 var ctx = canvas.getContext('2d');
 img.onload = function () {
