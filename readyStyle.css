@@ -1,0 +1,53 @@
+@font-face { font-family: Coco-Gothic; src: url('Coco-Gothic-Light-trial.otf'); } 
+body{
+  background-color: #1a1a1a;
+  color:white;
+
+}
+#readyPage{
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  font-family: Coco-Gothic;
+  display:none;
+}
+
+#readyPageButton{
+  top: 5%;
+  height: 10%;
+  font-size: 50px;
+  font-family: Coco-Gothic;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #FFF;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  border-radius: 16px;
+  width:50%;
+  margin:auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  margin-bottom: 50px;
+}
+#readyPageButton:hover{
+  cursor: pointer;
+  background-color: #ffd1dc;
+  color:#1a1a1a;
+}
+#fieldCanvas{
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 800px;
+}
+#readyPageLabel{
+  width: 20%;
+  margin:auto;
+  position: relative;
+  top: 20px;
+  color: rgb(150, 150, 150);
+}

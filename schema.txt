@@ -1,0 +1,19 @@
+Data Value Format:
+0, bool, Taxi
+1, int, auto high
+2, int, auto low
+3, int, auto missed
+4, int, tele high
+5, int, tele low
+6, int, tele missed
+7, bool, attempted climb
+8, int, climb Level (0: none, 1: low, 2: mid, 3: high, 4: traversal)
+9, int, climb time
+10, int, defense time
+inserted x, y
+11, bool, Penalty
+12, string, yeet distance
+13, bool, Oof
+14, string, general qata
+15, string, drivetrain type
+

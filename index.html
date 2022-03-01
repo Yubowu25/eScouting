@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+   <link rel="icon" href="/smileytexas.jpg">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+   <script type="text/javascript">
+      var hook = true;
+      window.onbeforeunload = function() {
+        if (hook) {
+          return "You did a bonk donk but did you mean to do a bonk donk?"
+        }
+      }
+      function unhook() {
+        hook=false;
+      }
+      </script>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>E-Scouting v3.1</title>
+      <link href="/startStyle.css" rel="stylesheet" type="text/css" />
+      <link href="/readyStyle.css" rel="stylesheet" type="text/css" />
+      <link href="/mainStyle.css" rel="stylesheet" type="text/css" />
+      <link href="/infoStyle.css" rel="stylesheet" type="text/css" />
+      <link href="/qataStyle.css" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+      <!--Start page -->
+      <div id="startPage">
+         <h1 id="startPageHeader">Rapid React E-Scouting</h1>
+         <div id="startPageDivider"></div>
+         <div style="display: flex; flex-direction: column;">
+            <input id="startPageName" class="startPageTextbox" type="text" placeholder="Scout Name"></input>
+            <input id="startPageTeam" class="startPageTextbox" type="text" placeholder="Team Number"></input>
+            <div style="display:flex; flex-direction: row; width:31%; margin:auto; ">
+               <input id="startPageMatch" type="text" placeholder="Match Number"></input>
+               <div id="startPageColor"></div>
+            </div>
+         </div>
+         <div id="startPageButtonWrapper">
+            <a onclick="transitionPage(0)"id="startPageButtonContainer"><span id="startPageButton">Continue</span></a>
+         </div>
+      </div>
+      <!-- Ready page -->
+      <div id="readyPage">
+         <div id="readyPageButton" onclick = "transitionPage(1)">
+            Start Match
+         </div>
+         <canvas class = "field" id = "fieldCanvas" onclick = "autoClick(event)" style=""></canvas>
+         <div id="readyPageLabel">Indicate robot starting position</div>
+      </div>
+
+      
+      <!--Main page-->
+      <textarea type="text" placeholder = "Notes" id="qata" name="qata"></textarea>
+      <!--<canvas id = "gameCanvas" onclick = "gameClick(event)" style=""></canvas>-->
+     
+      <div id="mainPage">
+         <div style="display:flex; flex-direction: column; width: 100%; height: 100%">
+            <div class="rowContainer">
+               <div id="containerTopLeft" class="container" tabindex="0" onclick="clickEvent(0)">
+                  High Goal
+               </div>
+                <div style="position: relative; right: 250px;">
+                  <div class="containerLabel">F</div>
+                  <div class="counterLabel" id="counterLabel0">0</div>
+                </div>
+               <div id="containerTopRight" class="container" tabindex="0" onclick="clickEvent(1)">
+                  Missed Goal
+               </div>
+                <div style="position: relative; right: 250px;">
+                  <div class="containerLabel">J</div>
+                  <div class="counterLabel" id="counterLabel1">0</div>
+                </div>
+            </div>
+            <div class="rowContainer">
+               <div id="containerBottomLeft" class="container" tabindex="0" onclick="clickEvent(2)">
+                  Low Goal
+               </div>
+                <div style="position: relative; right: 250px;">
+                  <div class="containerLabel">D</div>
+                  <div class="counterLabel" id="counterLabel2">0</div>
+                </div>
+               <div id="containerBottomRight" class="container2" onclick="clickEvent(3)">
+                  Auto Mobility
+               </div>
+                <div style="position: relative; right: 250px;">
+                <div class="containerLabel">K</div>
+                <div class="counterLabel" id="counterLabel3">false</div>
+                </div>
+
+            </div>
+         </div>
+      </div>
+      <!--Qata + edit-->
+      <div id="qataPage">
+        <div id="qataPageLeftContainer">
+          <div id="qataPageHeader">QATA</div>
+          <div style="display:flex; flex-direction: column;">
+              <div class="qataPageCheckboxContainer" onclick="cLevel(0)">
+                <div class="qataPageInputDisplay" id="qataPageInput" "> [N]</div>
+                <div class="qataPageInput"> Climb Level</div>
+              </div>
+
+
+              <div class="qataPageCheckboxContainer">
+                <div class="switch_box box_1" id="qataPageInput2">
+                    <input type="checkbox" class="switch_1" value="penalty" id="qataPageSwitch2">
+                </div>
+                <label for="qataPageInput2" class="qataPageInput"> Penalty</label>
+              </div>
+
+              <div class="qataPageCheckboxContainer">
+                <div class="switch_box box_1" id="qataPageInput3">
+                    <input type="checkbox" class="switch_1" value="oof" id="qataPageSwitch3">
+                </div>
+                <label for="qataPageInput3" class="qataPageInput"> Oof</label>
+              </div>
+
+              <div id="qataPageDivider"></div>
+              <input id="qataPageDT" class="qataPageBox" type="text" placeholder="Drive Train">
+              <input id="qataPageYD" class="qataPageBox" type="text" placeholder="Yeet Distance">    
+              <textarea id="qataPageGeneral" class="qataPageBox2" type="text" placeholder="Other"></textarea>
+
+          </div>
+
+
+        </div>
+        <div id="qataPageRightContainer">
+          <div id="qataPageHeader"> Edit</div>
+          <div id="tableContainer">  </div>
+          <div style="width: 100%; display:flex; flex-direction: row; margin-top: 30px;">
+            <div id="editPlusButton" class="editButton" onclick="edit(0)"> + </div>
+            <div id="editMinusButton" class="editButton" onclick="edit(1)"> - </div>
+          </div>
+        </div>
+        <div style="position:relative; right: 250px;">
+          <div class="wrapper">
+            <div class="link_wrapper">
+              <a onclick="transitionPage(2)">QR Screen</a>
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                  <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--QR Screen-->
+      <div id="qrscreen">
+         <div id="qrcode"></div>
+         <div id="dataString"></div>
+        <div id="goBackButton" onclick = "returnToEditScreen()" style="position: relative; top: 30px; color: red;"> Go back to edit screen</div>
+         <div style="position:relative; right: 250px;">
+          <div class="wrapper">
+            <div class="link_wrapper">
+              <a onclick="transitionPage(3)">Restart</a>
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                  <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--info bar-->
+      <div id="infoBar">
+         <div id="teamDisplay"> Team: </div>
+         <div id="timerDisplay"> 150 </div>
+         <div id="matchDisplay"> Match: </div>
+         <div id="resetButton" onclick = "gameReset()"> Reset </div>
+      </div>
+     
+      <script src="script.js"></script>
+   </body>
+</html>

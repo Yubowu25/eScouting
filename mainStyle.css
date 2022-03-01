@@ -1,0 +1,86 @@
+@font-face { font-family: Coco-Gothic; src: url('Coco-Gothic-Light-trial.otf'); } 
+@keyframes beat {
+  0% {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+  }
+}
+html{
+  height:100vh;
+}
+body{
+  overflow: hidden;
+}
+#mainPage{
+  display: none;
+}
+
+.container{
+  display:flex;
+  height: 95%;
+  width:45%;
+  margin:auto;
+  font-family: Coco-Gothic;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  transform: scale(1, 1);
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  
+}
+.container:focus {
+  animation: beat 0.5s;
+}
+.containerAnimated{
+  animation: beat 0.5s;
+}
+.container:active {
+  animation: none;
+}
+
+.container2{
+  display:flex;
+  height: 95%;
+  width:45%;
+  margin:auto;
+  font-family: Coco-Gothic;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  transform: scale(1, 1);
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  
+}
+.containerLabel{
+  color: rgb(150, 150, 150);
+  position: relative;
+  font-size: 15px;
+  left: 32vh;
+  top: 40vh;
+  font-family: Coco-Gothic;
+  z-index: -1;
+}
+.counterLabel{
+  color: rgb(150, 150, 150);
+  position: relative;
+  font-size: 17px;
+  right: 51vh;
+  top: 37vh;
+  z-index: -1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 20px;
+}
+
+.rowContainer{
+  display:flex; 
+  flex-direction: row; 
+  height: 45vh;
+  margin-top:1vh;
+  margin-bottom: 1vh;
+}
+

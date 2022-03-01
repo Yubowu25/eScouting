@@ -1,0 +1,137 @@
+@font-face { font-family: Coco-Gothic; src: url('Coco-Gothic-Light-trial.otf'); } 
+body{
+  background-color: #1a1a1a;
+  color:white;
+}
+#startPage{
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  font-family: Coco-Gothic;
+}
+#startPageHeader{
+  text-align: center;
+  font-size: 60px;
+  font-family: Coco-Gothic;
+  font-weight: normal;
+  margin-top: 10%;
+  margin-bottom:20px;
+  position: relative;
+}
+#startPageDivider{
+  width:35%;
+  border: 2px #696969;
+  border-style: none none solid none;
+  height:1px;
+  margin-bottom: 35px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.startPageTextbox{
+  width:30%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #1a1a1a;
+  height:45px;
+  border-radius: 16px;
+  color:white;
+  font-size:20px;
+  padding-left:10px;
+  transition: border 0.5s, background-color 0.5s;
+}
+.startPageTextbox:focus{
+  outline:none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #ffd1dc;
+}
+#startPageMatch{
+  width:80%;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #1a1a1a;
+  height:45px;
+  border-radius: 16px;
+  color:white;
+  font-size:20px;
+  padding-left:10px;
+  transition: border 0.5s, background-color 0.5s;
+}
+#startPageMatch:focus{
+  outline:none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #ffd1dc;
+}
+#startPageColor{
+  background-color: #FF6961;
+  width:45px;
+  height:45px;
+  border-radius:100%;
+  margin-left: 10px;
+  margin-top: 3px; 
+}
+#startPageContinue{
+  width:30%;
+  margin-bottom: 15px;
+  background-color: #ffd1dc;
+  border: 2px solid #1a1a1a;
+  height:50px;
+  border-radius: 16px;
+  color:#474747;
+  font-size:20px;
+  padding-left:10px;
+  position: relative;
+  left:34.5%;
+}
+
+
+#startPageButtonContainer{
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  font-family: Coco-Gothic;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #FFF;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  border-radius: 16px;
+  width:30%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+#startPageButtonContainer #startPageButton{
+  position: relative;
+  z-index: 2;
+  border-radius: 16px;
+}
+
+#startPageButtonContainer:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ffd1dc;
+  transition: all .35s;
+  border-radius: 16px;
+}
+
+#startPageButtonContainer:hover{
+  color: #1a1a1a;
+  border-radius: 16px;
+}
+
+#startPageButtonContainer:hover:after{
+  width: 100%;
+  border-radius: 16px;
+}
